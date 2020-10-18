@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5E77BFBA-274F-4D3B-A63A-234740A0C983"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "582CE130-0972-49A6-B542-21F872178DA8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1l_GorshkovDmitriy/FrendsView/FrendsViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "FrendsViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "582CE130-0972-49A6-B542-21F872178DA8 - faa3a8b41a48b99f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GorshkovDmitriy.FrendsViewCell.friendAvatarImageView.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "GorshkovDmitriy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriy/Desktop/Swift/2.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B8%CC%86%D1%81%20iOS/VK_test_project/1l_GorshkovDmitriy/FrendsView/FrendsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "582CE130-0972-49A6-B542-21F872178DA8 - 25df740a13f68de3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GorshkovDmitriy.FrendsViewCell.friendAvatarImageView.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "GorshkovDmitriy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriy/Desktop/Swift/2.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B8%CC%86%D1%81%20iOS/VK_test_project/1l_GorshkovDmitriy/FrendsView/FrendsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "582CE130-0972-49A6-B542-21F872178DA8 - 13691956e1044690"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GorshkovDmitriy.FrendsViewCell.friendAvatarImageView.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "GorshkovDmitriy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriy/Desktop/Swift/2.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B8%CC%86%D1%81%20iOS/VK_test_project/1l_GorshkovDmitriy/FrendsView/FrendsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "582CE130-0972-49A6-B542-21F872178DA8 - 9335372996d42c52"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GorshkovDmitriy.FrendsViewCell.friendAvatarImageView.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "GorshkovDmitriy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriy/Desktop/Swift/2.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B8%CC%86%D1%81%20iOS/VK_test_project/1l_GorshkovDmitriy/FrendsView/FrendsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "582CE130-0972-49A6-B542-21F872178DA8 - 30c2af58fd4b37e7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GorshkovDmitriy.FrendsViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; GorshkovDmitriy.FrendsViewCell"
+                  moduleName = "GorshkovDmitriy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriy/Desktop/Swift/2.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B8%CC%86%D1%81%20iOS/VK_test_project/1l_GorshkovDmitriy/FrendsView/FrendsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "341">
+               </Location>
+               <Location
+                  uuid = "582CE130-0972-49A6-B542-21F872178DA8 - e2b78ba82809b006"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GorshkovDmitriy.FrendsViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;GorshkovDmitriy.FrendsViewCell&gt;"
+                  moduleName = "GorshkovDmitriy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriy/Desktop/Swift/2.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B8%CC%86%D1%81%20iOS/VK_test_project/1l_GorshkovDmitriy/FrendsView/FrendsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "258">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
