@@ -70,6 +70,21 @@
             <point key="canvasLocation" x="-1843" y="138"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="PaA-nH-wSt">
+            <objects>
+                <viewController id="ub6-bp-M76" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hl4-is-zCt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="JiN-5w-zxp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efc-p5-Sux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-889" y="-390"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="vc" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="GorshkovDmitriy" customModuleProvider="target" sceneMemberID="viewController">
