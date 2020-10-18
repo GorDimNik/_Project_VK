@@ -70,37 +70,6 @@
             <point key="canvasLocation" x="-1843" y="138"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="qjz-6Y-sdK">
-            <objects>
-                <viewController id="Kik-r3-2Sr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LKy-YG-aKC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc2-bi-VEr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4IP-GM-C9l"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Rc2-bi-VEr" firstAttribute="leading" secondItem="4IP-GM-C9l" secondAttribute="leading" id="0SJ-l3-QIc"/>
-                            <constraint firstItem="4IP-GM-C9l" firstAttribute="bottom" secondItem="Rc2-bi-VEr" secondAttribute="bottom" id="PSc-xO-xJ2"/>
-                            <constraint firstItem="Rc2-bi-VEr" firstAttribute="top" secondItem="4IP-GM-C9l" secondAttribute="top" id="die-fA-Q22"/>
-                            <constraint firstItem="4IP-GM-C9l" firstAttribute="trailing" secondItem="Rc2-bi-VEr" secondAttribute="trailing" id="gVX-YI-wWN"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sbO-aj-Eso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1026" y="-352"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="vc" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="GorshkovDmitriy" customModuleProvider="target" sceneMemberID="viewController">
