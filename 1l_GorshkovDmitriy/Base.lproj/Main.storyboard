@@ -62,34 +62,48 @@
                         <outlet property="point1" destination="lNp-8A-max" id="Jcb-Go-4Fj"/>
                         <outlet property="point2" destination="woM-La-SvM" id="L6O-9s-Skk"/>
                         <outlet property="point3" destination="iII-aG-o2K" id="d6s-qT-U9W"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="goVC" id="HAW-Pn-ng1"/>
+                        <segue destination="iut-8E-hzb" kind="show" identifier="goVC" id="NUS-bV-wqB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHz-3G-fBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1843" y="138"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="PaA-nH-wSt">
+        <!--Authorization View Controller-->
+        <scene sceneID="KyO-VQ-bIB">
             <objects>
-                <viewController id="ub6-bp-M76" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hl4-is-zCt">
+                <viewController modalPresentationStyle="fullScreen" id="iut-8E-hzb" customClass="AuthorizationViewController" customModule="GorshkovDmitriy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nuc-gn-Bvl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4o-wx-sqp">
-                                <rect key="frame" x="184" y="400" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyv-BP-khW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="JiN-5w-zxp"/>
+                        <viewLayoutGuide key="safeArea" id="Kz7-Px-k9S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kz7-Px-k9S" firstAttribute="trailing" secondItem="Pyv-BP-khW" secondAttribute="trailing" id="5yr-LP-IAe"/>
+                            <constraint firstItem="Pyv-BP-khW" firstAttribute="top" secondItem="Kz7-Px-k9S" secondAttribute="top" id="Euq-1P-LdR"/>
+                            <constraint firstItem="Pyv-BP-khW" firstAttribute="leading" secondItem="Kz7-Px-k9S" secondAttribute="leading" id="dKx-jj-dQV"/>
+                            <constraint firstItem="Kz7-Px-k9S" firstAttribute="bottom" secondItem="Pyv-BP-khW" secondAttribute="bottom" id="jC4-73-Cjv"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X2d-1f-Mc8"/>
+                    <connections>
+                        <outlet property="webview" destination="Pyv-BP-khW" id="raG-ON-jnE"/>
+                        <segue destination="xy2-mm-WZC" kind="show" identifier="vkGo" id="6gs-vT-Bc7"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="efc-p5-Sux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Juz-Cz-SCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-889" y="-390"/>
+            <point key="canvasLocation" x="-938" y="-250"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -189,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-939" y="499"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ao7-5e-Lx7">
@@ -694,6 +708,9 @@
             <point key="canvasLocation" x="3515.9420289855075" y="-218.30357142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6gs-vT-Bc7"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart_1" width="512" height="512"/>
         <image name="iconVK" width="512" height="512"/>

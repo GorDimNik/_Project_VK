@@ -1,0 +1,6 @@
+framework module Pods_1l_GorshkovDmitriy {
+  umbrella header "Pods-1l_GorshkovDmitriy-umbrella.h"
+
+  export *
+  module * { export * }
+}

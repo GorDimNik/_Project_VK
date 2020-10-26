@@ -7,8 +7,21 @@
 //
 
 import UIKit
+import Alamofire
 
 class FrendsViewController: UITableViewController {
+    
+    //получение списка друзей
+   
+    /* https://api.vk.com/method/friends.get?access_token=5716cbc86e6bc378b43620ef988b7b97fd4ab988353c892acc40b3e7d7e94dabb3dbb62b275a1c91f1af2&v=5.124
+    
+*/
+    
+    // используем Alamofire для запроса к серверу, сразу передаем строку с URL и вызываем метод
+    // responseJSON, передавая ему замыкание.
+   
+    
+    
     
     let friends: [Friend] = [
         Friend(title: "Яблочкин Алексей", avatar: UIImage(named: "iconVK"), photos: [
@@ -65,6 +78,19 @@ class FrendsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN&v=V
+        //получение списка друзей
+        let paramters: Parameters = [
+                    "access_token": Session.instance.token,
+                    "v": "5.124"
+                ]
+
+        AF.request("https://api.vk.com/method/friends.get", parameters: paramters).responseJSON { response in
+        
+        print(response.value) }
+        
+        
         
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar

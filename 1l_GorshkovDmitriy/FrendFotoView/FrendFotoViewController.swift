@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FrendFotoViewController: UICollectionViewController {
 
@@ -14,6 +15,18 @@ class FrendFotoViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN&v=V
+        //получение списка фотографий пользователя
+        let paramters: Parameters = [
+            "owner_id": Session.instance.userId,
+            "access_token": Session.instance.token,
+            "v": "5.77"
+        ]
+
+        AF.request("https://api.vk.com/method/photos.getAll", parameters: paramters).responseJSON { response in
+        
+        print(response.value) }
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

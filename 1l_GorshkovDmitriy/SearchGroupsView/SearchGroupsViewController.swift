@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchGroupsViewController: UITableViewController {
    
@@ -25,6 +26,20 @@ class SearchGroupsViewController: UITableViewController {
 //        allGroups.append(group2)
 //        allGroups.append(group3)
 //        allGroups.append(group4)
+        
+        //https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN&v=V
+        //поиск по группам
+        let paramters: Parameters = [
+            "q": "франсавто",
+            "access_token": Session.instance.token,
+            "v": "5.54"
+        ]
+
+        AF.request("https://api.vk.com/method/groups.search", parameters: paramters).responseJSON { response in
+        
+        print(response.value) }
+        
+        
     }
 
 
