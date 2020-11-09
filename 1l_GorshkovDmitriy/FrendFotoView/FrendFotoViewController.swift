@@ -9,6 +9,32 @@
 import UIKit
 import Alamofire
 
+
+struct sizeFoto: Decodable{
+    let height: Int
+    let url: String
+    let width: Int
+}
+
+struct InfoAlbomFriend: Decodable{
+    let album_id: Int
+    let date: Int
+    let id: Int
+    let owner_id: Int
+    let has_tags: Bool
+    let sizes: [sizeFoto]
+}
+
+struct AlbomFriend: Decodable {
+    let count: Int
+    let items: [InfoAlbomFriend]
+}
+
+struct DateAlbomFriend: Decodable {
+    let response: AlbomFriend
+}
+
+
 class FrendFotoViewController: UICollectionViewController {
 
     var friend: Friend!
@@ -16,17 +42,16 @@ class FrendFotoViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN&v=V
-        //получение списка фотографий пользователя
-        let paramters: Parameters = [
-            "owner_id": Session.instance.userId,
-            "access_token": Session.instance.token,
-            "v": "5.77"
-        ]
+        //
+        print ("ПЕРЕДАННЫЙ ОБЪЕКТ: ", friend!)
+        loadFriendsFoto(){ [weak self] friendfoto in
+            
+            //print("1111111 = ")
+            
+            
+            
+        }
 
-        AF.request("https://api.vk.com/method/photos.getAll", parameters: paramters).responseJSON { response in
-        
-        print(response.value) }
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -52,5 +77,37 @@ class FrendFotoViewController: UICollectionViewController {
         return cell
     }
 
+    
+    
+    //НАЧАЛО - загрузка списка друзей с VK.COM
+    func loadFriendsFoto(completion: @escaping ([InfoAlbomFriend]) -> Void ){
+        //получение списка фотографий пользователя
+        let paramters: Parameters = [
+            "owner_id": Session.instance.userId,
+            "access_token": Session.instance.token,
+            "v": "5.77"
+        ]
+
+        AF.request("https://api.vk.com/method/photos.getAll", parameters: paramters).responseData { response in
+        
+            
+            do {
+                let friendfoto = try JSONDecoder().decode(DateAlbomFriend.self, from: response.value!)
+                //print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+                //print ("1111 === ", friends.response.items)
+                //print ("1111 === ", friendfoto.response.items)
+                completion(friendfoto.response.items)
+                //print("переменная friends = ", friends)
+            } catch {
+                print("ОШИБКА = ", error)
+            }
+            
+            
+            
+            
+        print("ПРОВЕРКА = ",response.value) }
+        
+        
+    }
 
 }
