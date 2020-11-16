@@ -9,6 +9,7 @@
 import UIKit
 
 struct Friend {
+    var id: Int
     var title: String
     var avatar: UIImage?
     var photos: [UIImage?]

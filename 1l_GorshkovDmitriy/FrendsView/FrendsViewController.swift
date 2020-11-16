@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 // НАЧАЛО - структура для загрузки данных с VK.COM
 struct InfoFriend: Decodable{
@@ -35,73 +36,11 @@ struct DateFriend: Decodable {
 }
 // КОНЕЦ - структура для загрузки данных с VK.COM
 
-
 class FrendsViewController: UITableViewController {
-    
-    //    var friends: [Friend] = []
-    //    var friends: [Friend] = [ Friend(title: "Яблочкин Алексей", avatar: UIImage(named: "iconVK"), photos: [UIImage(named: "iconVK")])]
-    //        [
-    //        Friend(title: "Яблочкин Алексей", avatar: UIImage(named: "iconVK"), photos: [
-    //            UIImage(named: "iconVK")
-    //        ]),
-    //        Friend(title: "Иванов Иван", avatar: UIImage(named: "iconVK"), photos: [
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK")
-    //        ]),
-    //        Friend(title: "Борисов Василий", avatar: UIImage(named: "iconVK"), photos: [
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK")
-    //        ]),
-    //        Friend(title: "Петров Петр", avatar: UIImage(named: "iconVK"), photos: [
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //        ]),
-    //        Friend(title: "Сидоров Евгений", avatar: UIImage(named: "iconVK"), photos: [
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK")
-    //        ]),
-    //        Friend(title: "Александров Сергей", avatar: UIImage(named: "iconVK"), photos: [
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK")
-    //        ]),
-    //        Friend(title: "Алексеев Роман", avatar: UIImage(named: "iconVK"), photos: [
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK"),
-    //            UIImage(named: "iconVK")
-    //        ])
-    //    ]
-    
-    
     
     var sectionFriend : [SectionFriend] = []
     var searhResult: [SectionFriend] = []
-    
-    
-    
-    
     var searchController: UISearchController!
-    
-    
-    
-    
-    // var friends_: [Friend] = []
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,18 +58,12 @@ class FrendsViewController: UITableViewController {
             var temp: [Friend] = []
             
             
-            var temp_: Friend = Friend(title: "", avatar: UIImage(named: "iconVK"), photos:[UIImage(named: "iconVK")])
+            var temp_: Friend = Friend(id: 0, title: "", avatar: UIImage(named: "iconVK"), photos:[UIImage(named: "iconVK")])
             
             var image: UIImage?
             
-            
-            //            print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            //            print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            //print("ПРОВЕРКА2 = ", datafriends[0])
-            
-            //print("ПРОВЕРКА3 = ", datafriends.count)
             for i in 0...datafriends.count-1{
-                
+                temp_.id = datafriends[i].id
                 temp_.title = datafriends[i].name + " " + datafriends[i].surname
                 //print(temp.title)
                 
@@ -143,25 +76,11 @@ class FrendsViewController: UITableViewController {
                 friends.append(temp_)
                 
             }
-            print("СФОРМИРОВАННЫЙ МАССИВ = ", friends )
-            
-            //print("Массив друзей = ", self?.friends_)
-            //self?.tableView.reloadData()
-            
-            //            print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            //            print("ПРОВЕРКА3 = ", self?.friends_[0])
-            
-            
-            
             
             //из структуры friends - создаем массив неповторяющихся сортированных по алфавиту первых букв имени
             let sectionTitle = Array(Set(friends.compactMap { $0.title.prefix(1) } )).sorted()
-            //print(sectionTitle)
             
             friendsTemp = friends
-            
-            //проверка колличества секций в sectionTitle
-            //print(sectionTitle.count)
             
             //проходим по всей структуре friendsTemp и вытаскиваем всех пользователей в алфавитном паорядке в новую структуру sectionFriend
             for j in 0...sectionTitle.count - 1
@@ -179,53 +98,8 @@ class FrendsViewController: UITableViewController {
                 self?.sectionFriend.append(sectionFriendtemp)
                 temp = []
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             self?.tableView.reloadData()
         }
-        
-        
-        
-        
-        // print("Массив друзей = ", friends)
-        //print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-        //print("ПРОВЕРКА1 = ",friends)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //вывод на печать в консоль получившейся струруктуры для проверки
-        //        for z in 0...sectionFriend.count - 1
-        //        {
-        //            print("секция: \(sectionFriend[z].sectionName)")
-        //            for u in 0...sectionFriend[z].frendStruct.count - 1{
-        //                print(sectionFriend[z].frendStruct[u].title)
-        //            }
-        //        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -262,6 +136,7 @@ class FrendsViewController: UITableViewController {
         }else{
             cell.friendName.text = sectionFriend[indexPath.section].frendStruct[indexPath.row].title
             cell.friendAvatarImageView.image = sectionFriend[indexPath.section].frendStruct[indexPath.row].avatar
+            //cell.friendAvatarImageView.af_setImage(withURL: <#T##URL#>)
             //return cell
         }
         return cell
@@ -328,17 +203,11 @@ extension FrendsViewController: UISearchResultsUpdating  {
             
             do {
                 let friends = try JSONDecoder().decode(DateFriend.self, from: response.value!)
-                //print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-                //print ("1111 === ", friends.response.items)
-                // print ("1111 === ", friends.response.items)
                 completion(friends.response.items)
-                //print("переменная friends = ", friends)
+
             } catch {
                 print(error)
             }
-            
-            //print("запрос аламофайер = ", response.value)
-            
         }
     }
     //КОНЕЦ - загрузка списка друзей с VK.COM

@@ -6,6 +6,8 @@ target '1l_GorshkovDmitriy' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.2'
+  pod 'AlamofireImage', '~> 4.1'
+  
   # Pods for 1l_GorshkovDmitriy
 
 end

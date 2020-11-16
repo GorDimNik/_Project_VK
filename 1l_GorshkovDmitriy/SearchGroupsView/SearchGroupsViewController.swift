@@ -13,11 +13,11 @@ class SearchGroupsViewController: UITableViewController {
    
 
     
-    var allGroups: [group] = [
-        group(title: "Фильмы", avatar: UIImage(named: "iconVK")),
-        group(title: "Музыка", avatar: UIImage(named: "iconVK")),
-        group(title: "Игры", avatar: UIImage(named: "iconVK")),
-        group(title: "Рукоделие", avatar: UIImage(named: "iconVK")),
+    var allGroups: [Group] = [
+        Group(title: "Фильмы", avatar: UIImage(named: "iconVK")),
+        Group(title: "Музыка", avatar: UIImage(named: "iconVK")),
+        Group(title: "Игры", avatar: UIImage(named: "iconVK")),
+        Group(title: "Рукоделие", avatar: UIImage(named: "iconVK")),
     ]
     
     override func viewDidLoad() {

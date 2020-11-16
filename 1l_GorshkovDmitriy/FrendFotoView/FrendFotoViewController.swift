@@ -41,17 +41,32 @@ class FrendFotoViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        friend.photos.removeAll()
         //
         print ("ПЕРЕДАННЫЙ ОБЪЕКТ: ", friend!)
         loadFriendsFoto(){ [weak self] friendfoto in
-            
-            //print("1111111 = ")
-            
+            var image: UIImage?
             
             
+            
+            for i in 0...friendfoto.count-1 {
+                
+                
+                print("ФОТО",friendfoto[i].sizes[3].url)
+                
+                let urlString = friendfoto[i].sizes[3].url
+                let url = NSURL(string: urlString)! as URL
+                if let imageData: NSData = NSData(contentsOf: url) {
+                    image = UIImage(data: imageData as Data)
+                }
+                self?.friend.photos.append(image)
+                //print("1111111 = ")
+                
+            }
+            //self?.tableView.reloadData()
+            self?.collectionView.reloadData()
         }
-
+        
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -82,8 +97,9 @@ class FrendFotoViewController: UICollectionViewController {
     //НАЧАЛО - загрузка списка друзей с VK.COM
     func loadFriendsFoto(completion: @escaping ([InfoAlbomFriend]) -> Void ){
         //получение списка фотографий пользователя
+        print("Френд id = ", friend.id)
         let paramters: Parameters = [
-            "owner_id": Session.instance.userId,
+            "owner_id": friend.id,
             "access_token": Session.instance.token,
             "v": "5.77"
         ]
@@ -97,7 +113,7 @@ class FrendFotoViewController: UICollectionViewController {
                 //print ("1111 === ", friends.response.items)
                 //print ("1111 === ", friendfoto.response.items)
                 completion(friendfoto.response.items)
-                //print("переменная friends = ", friends)
+               // print("переменная фото = ", friendfoto.response.items)
             } catch {
                 print("ОШИБКА = ", error)
             }
